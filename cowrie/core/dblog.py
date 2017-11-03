@@ -43,9 +43,7 @@ class DBLogger(object):
             'cowrie.log.closed': self.handleTTYLogClosed,
         }
 
-        self.reported_ssh_port = None
-        if self.cfg.has_option('honeypot', 'reported_ssh_port'):
-            self.reported_ssh_port = int(cfg.get('honeypot', 'reported_ssh_port'))
+        self.reported_ssh_port = int(cfg.get('honeypot', 'reported_ssh_port'))
 
         self.report_public_ip = False
         if self.cfg.has_option('honeypot', 'report_public_ip'):
